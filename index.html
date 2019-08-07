@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="clock"></div><br>
+    
+    <div class="calculator">
+        <input type="text" class="display" readonly placeholder="0">
+        <button onclick = "clearInput()">C</button>
+        <button onclick = "memorize()">M</button>
+        <button onclick = "clearMemory()">MC</button>
+        <div class="digits">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button><br>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button><br>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button><br>
+            <button>0</button>
+        </div>
+        <br>
+        <div class="opers">
+            <button>.</button>
+            <button>+</button>
+            <button>-</button>
+            <button>*</button>
+            <button>/</button>
+        </div>
+        <br>
+        <button class="equal">=</button>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
