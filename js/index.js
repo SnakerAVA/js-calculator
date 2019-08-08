@@ -6,19 +6,18 @@ setInterval(
 
 var display = document.querySelector('.calculator .display');
 
-var displayValue = display.value;
 
 function clearInput() {
-    displayValue = ""
+    display.value = ""
 }
 
 var memory = "";
 
-function memorize(){
+function memorize() {
     if (memory === "") {
-        memory = displayValue; 
+        memory = display.value;
     } else {
-        displayValue += memory;
+        display.value += memory;
     }
 }
 
@@ -31,7 +30,7 @@ document
     .forEach(digit => digit.addEventListener('click', digitPressed));
 
 function digitPressed(ev) {
-    displayValue += ev.target.innerText;
+    display.value += ev.target.innerText;
 
 }
 
@@ -40,19 +39,19 @@ document
     .forEach(oper => oper.addEventListener('click', operPressed));
 
 function operPressed(ev) {
-    if (isNaN(displayValue[displayValue.length-1])) {
-        displayValue = displayValue.substr(0, displayValue.length-1)
+    if (isNaN(display.value[display.value.length - 1])) {
+        display.value = display.value.substr(0, display.value.length - 1)
     }
 
-    displayValue += ev.target.innerText;
+    display.value += ev.target.innerText;
 }
 
 document.querySelector('.equal').addEventListener('click', equalPressed);
 
 function equalPressed() {
-    displayValue = eval(displayValue);
+    display.value = eval(display.value);
 
-    if (displayValue === "Infinity") {
+    if (display.value === "Infinity") {
         alert("You can't divide by 0");
         clearInput();
     }
